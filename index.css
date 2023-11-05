@@ -4,11 +4,6 @@
 @tailwind utilities;
 
 
-html,
-body,
-.container {
-    height: 100%;
-}
 
 body {
     font-family: 'Open Sans', sans-serif;
