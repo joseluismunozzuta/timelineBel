@@ -934,6 +934,10 @@ html{
   margin: 0.5rem;
 }
 
+.flex{
+  display: flex;
+}
+
 .h-10{
   height: 2.5rem;
 }
@@ -980,6 +984,10 @@ html{
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+.justify-center{
+  justify-content: center;
 }
 
 .rounded-full{
@@ -1093,7 +1101,7 @@ body {
   width: 80%;
   max-width: 310px;
   right: 50%;
-  top: 10%;
+  top: 8%;
   transform: translate(50%, 0);
   font-size: 12px;
   z-index: 2;
@@ -1102,8 +1110,9 @@ body {
 .timeline .swiper-slide .timeline-year {
   display: block;
   font-style: italic;
-  font-size: 42px;
+  font-size: 30px;
   margin-bottom: 50px;
+  margin-top: 0px;
   transform: translate3d(20px, 0, 0);
   color: #d4a024;
   font-weight: 300;
@@ -1201,7 +1210,7 @@ body {
 .timeline .swiper-button-next,
 .timeline .swiper-button-prev {
   background-size: 20px 20px;
-  top: 15%;
+  top: 10%;
   width: 20px;
   height: 20px;
   margin-top: 0;
@@ -1247,7 +1256,7 @@ body {
 
   .timeline .swiper-slide .timeline-year {
     margin-bottom: 0;
-    font-size: 32px;
+    font-size: 25px;
   }
 
   .timeline .swiper-slide .timeline-title {
