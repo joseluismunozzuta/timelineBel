@@ -23,4 +23,4 @@ if __name__ == '__main__':
 
     for image_url in image_urls:
         relative_path = convert_file_url_to_path(image_url, root_directory)
-        print(relative_path)
+        print(f'"{relative_path}",')
