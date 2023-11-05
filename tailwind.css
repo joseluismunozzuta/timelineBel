@@ -1029,6 +1029,10 @@ html{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .transition-all{
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1124,12 +1128,12 @@ body {
   font-weight: 800;
   font-size: 34px;
   margin: 0 0 30px;
-  opacity: 0;
   transform: translate3d(20px, 0, 0);
   transition: 0.2s ease 0.5s;
 }
 
 .timeline .swiper-slide .timeline-text {
+  font-size: 15px;
   line-height: 1.5;
   opacity: 0;
   transform: translate3d(20px, 0, 0);
@@ -1143,6 +1147,7 @@ body {
 }
 
 .timeline .swiper-slide-active .timeline-title {
+  color: whitesmoke;
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: 0.4s ease 1.7s;
@@ -1181,7 +1186,7 @@ body {
   text-align: center;
   opacity: 1;
   background: transparent;
-  color: #d4a024;
+  color: #fff;
   margin: 15px 0 10px 10px!important;
   position: relative;
 }
@@ -1200,7 +1205,7 @@ body {
 }
 
 .timeline .swiper-pagination-bullet-active {
-  color: #d4a024;
+  color: #fff;
 }
 
 .timeline .swiper-pagination-bullet-active::before {
