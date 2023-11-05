@@ -12,484 +12,591 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
     </head>
     <body>
-
-        <div class="container h-screen" id="container1">
-
-            <div class="timeline">
-                <a class="absolute top-0 right-0 p-1 m-1" style="z-index:999"
-                    id="scrollToContainer2">
-                    <button type="button" style="background-color: white;"
-                        class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:pointer-events-none w-8 max-w-[40px] h-8 max-h-[40px] text-xs text-blue-gray-900 shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:shadow-none rounded-full">
-                        <span
-                            class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2"><svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                height="1em" viewBox="0 0 384 512"><path
-                                    d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg></span>
-                    </button>
-                </a>
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
-
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel0">
-
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
+        <section>
+            <div class="hero min-h-screen" id="heroInitial"
+                style="background-image: url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg);">
+                <div class="hero-overlay bg-opacity-60"></div>
+                <div
+                    class="h-full flex items-stretch justify-center max-w-7xl gap-4 p-4 z-0 text-center text-neutral-content">
+                    <div class="max-w-md flex flex-col justify-between mb-3">
+                        <div>
+                            <h1 class="pt-4 mb-5 font-bold text-white text-4xl">Y
+                                así me enamoré de ti ❤️</h1>
                         </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
-
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel1">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
+                        <div class="mb-4 gap-3 flex flex-col">
+                            <p class="m-auto mb-3 px-4 text-white text-sm">En
+                                esta
+                                línea de tiempo, trataré de explicar lo maravilloso que ha sido este camino
+                                a tu
+                                lado, y lo afortunado que
+                                me siento de seguir compartiendo mi vida a tu
+                                lado! <br><br>Te quiero demasiado, y quizá no es para tanto... pero sí para siempre🥹</p>
+                            <button id="scrollToContainer1"
+                                class="w-7/12 m-auto btn btn-secondary">Nuestra
+                                historia ❤️</button>
                         </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
 
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel2">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
-
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel3">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
-
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel4">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
-                        </div>
                     </div>
-
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-pagination"></div>
                 </div>
             </div>
-        </div>
-        <div class="container" id="container2">
-            <div class="timeline">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
+        </section>
+        <section>
+            <div class="container h-screen relative" id="container1">
 
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel5">
+                <div class="timeline">
+                    <a class="absolute top-0 right-0 p-1 m-1"
+                        style="z-index:999"
+                        id="scrollToContainer2">
+                        <button type="button" style="background-color: white;"
+                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:pointer-events-none w-8 max-w-[40px] h-8 max-h-[40px] text-xs text-blue-gray-900 shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:shadow-none rounded-full">
+                            <span
+                                class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2"><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="1em" viewBox="0 0 384 512"><path
+                                        d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg></span>
+                        </button>
+                    </a>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel0">
+
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
                                 </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel1">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel2">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel3">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel4">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
 
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel6">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
-
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel7">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
-
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel8">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
-
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel9">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
-                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-pagination"></div>
                 </div>
             </div>
-        </div>
-        <div class="container" id="container3">
-            <div class="timeline">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
+            <div class="container" id="container2">
+                <div class="timeline">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
 
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel10">
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel5">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
                                 </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel6">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel7">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel8">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel9">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
-
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel11">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
-
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel12">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
-
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel13">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
-
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel14">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
-                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-pagination"></div>
                 </div>
             </div>
-        </div>
-        <div class="container" id="container4">
-            <div class="timeline">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
+            <div class="container" id="container3">
+                <div class="timeline">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
 
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel15">
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel10">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
                                 </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel11">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel12">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel13">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel14">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
-
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel16">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
-
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel17">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide"
-                            style="background-image: url(/assets/img/back2.jpg)"
-                            data-year="1">
-
-                            <div class="swiper-slide-content">
-                                <span
-                                    class="timeline-year">Agosto</span>
-                                <div
-                                    class="h-56 carousel carousel-vertical rounded-box"
-                                    id="carousel18">
-                                </div>
-                                <h4 class="timeline-title">Primera cita🫶</h4>
-                                <p class="timeline-text">Te vi y estabas tan
-                                    hermosa como de costumbre, mi corazón estaba
-                                    feliz de ir al teatro contigo!
-                                    Aunque me hiciste esperar 20 minutos, apenas
-                                    te vi, solo atiné a emocionarme y sonreír ❤️
-                                    Salieron hermosas fotos ese día, nuestras
-                                    primeras fotos!
-                                </p>
-                            </div>
-                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-pagination"></div>
                 </div>
             </div>
-        </div>
+            <div class="container" id="container4">
+                <div class="timeline">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel15">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel16">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel17">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image: url(/assets/img/back2.jpg)"
+                                data-year="1">
+
+                                <div class="swiper-slide-content">
+                                    <span
+                                        class="timeline-year">Agosto</span>
+                                    <div
+                                        class="h-56 carousel carousel-vertical rounded-box"
+                                        id="carousel18">
+                                    </div>
+                                    <h4 class="timeline-title">Primera cita🫶</h4>
+                                    <p class="timeline-text">Te vi y estabas tan
+                                        hermosa como de costumbre, mi corazón
+                                        estaba
+                                        feliz de ir al teatro contigo!
+                                        Aunque me hiciste esperar 20 minutos,
+                                        apenas
+                                        te vi, solo atiné a emocionarme y
+                                        sonreír ❤️
+                                        Salieron hermosas fotos ese día,
+                                        nuestras
+                                        primeras fotos!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <script src="/index.js"></script>
     </body>
 </html>
