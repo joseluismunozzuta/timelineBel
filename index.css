@@ -84,7 +84,7 @@ body {
     margin-bottom: 50px;
     margin-top: 0px;
     transform: translate3d(20px, 0, 0);
-    color: #d4a024;
+    color: rgb(247, 247, 247);
     font-weight: 300;
     opacity: 0;
     transition: 0.2s ease 0.4s;
