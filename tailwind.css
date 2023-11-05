@@ -962,6 +962,14 @@ html{
   height: 2rem;
 }
 
+.h-60{
+  height: 15rem;
+}
+
+.h-56{
+  height: 14rem;
+}
+
 .max-h-\[40px\]{
   max-height: 40px;
 }
