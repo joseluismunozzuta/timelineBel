@@ -96,6 +96,14 @@ scrollToContainer1Button.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    let backgroundinitial = document.getElementById("heroInitial");
+    const min = 1;
+    const max = 8;
+    const random_number = Math.floor(Math.random() * (max - min + 1)) + min;
+    backgroundinitial.style.backgroundImage = `url(/assets/img/hero${random_number}.jpg)`;
+    backgroundinitial.style.backgroundPosition = "center";
+
+
     let carouselItemHtml1 = `<div
     class="carousel-item h-full flex justify-center ">
     <img
@@ -116,12 +124,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    let backgroundinitial = document.getElementById("heroInitial");
-    const min = 1;
-    const max = 8;
-    const random_number = Math.floor(Math.random() * (max - min + 1)) + min;
-    backgroundinitial.style.backgroundImage = `url(/assets/img/hero${random_number}.jpg)`;
-    backgroundinitial.style.backgroundPosition = "center";
 });
 
 const imagesUrls = [
