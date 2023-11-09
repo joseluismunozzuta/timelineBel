@@ -1210,6 +1210,10 @@ html{
   position: relative;
 }
 
+.bottom-0{
+  bottom: 0px;
+}
+
 .left-1\/2{
   left: 50%;
 }
@@ -1218,12 +1222,12 @@ html{
   right: 0px;
 }
 
-.top-0{
-  top: 0px;
-}
-
 .top-1\/2{
   top: 50%;
+}
+
+.left-0{
+  left: 0px;
 }
 
 .z-0{
@@ -1280,6 +1284,33 @@ html{
 
 .h-screen{
   height: 100vh;
+}
+
+.h-64{
+  height: 16rem;
+}
+
+.h-60{
+  height: 15rem;
+}
+
+.h-fit{
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.h-auto{
+  height: auto;
+}
+
+.h-min{
+  height: -moz-min-content;
+  height: min-content;
+}
+
+.h-max{
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .max-h-\[40px\]{
@@ -1507,10 +1538,10 @@ body {
 .timeline .swiper-slide-content {
   position: absolute;
   text-align: center;
-  width: 80%;
+  width: 95%;
   max-width: 310px;
   right: 50%;
-  top: 8%;
+  top: 3%;
   transform: translate(50%, 0);
   font-size: 12px;
   z-index: 2;
@@ -1620,7 +1651,7 @@ body {
 .timeline .swiper-button-next,
 .timeline .swiper-button-prev {
   background-size: 20px 20px;
-  top: 10%;
+  top: 5%;
   width: 20px;
   height: 20px;
   margin-top: 0;
