@@ -21,51 +21,16 @@ document.addEventListener("DOMContentLoaded", async function () {
     backgroundinitial.style.backgroundImage = `url(assets/img/hero${random_number}.jpg)`;
     backgroundinitial.style.backgroundPosition = "center";
 
-    let scrollDownElements = document.querySelectorAll('.scroll-down');
-    scrollDownElements.forEach(function (element) {
-        element.classList.add("opacity-60");
-        let dataValue = element.getAttribute('data-value');
-        //console.log('Down - Data Value:', dataValue);
-        let nextCont = document.getElementById("container" + (parseInt(dataValue) + 1));
-        if (nextCont) {
-            //console.log("It has next container");
-            element.addEventListener('click', function (e) {
-                e.preventDefault();
-                nextCont.scrollIntoView({ behavior: "smooth" });
-            });
-        } else {
-            element.classList.add("invisible");
-        }
-    });
-
-    let scrollUpElements = document.querySelectorAll('.scroll-up');
-    scrollUpElements.forEach(function (element) {
-        element.classList.add("opacity-60");
-        let dataValue = element.getAttribute('data-value');
-        //console.log('Up - Data Value:', dataValue);
-        let prevCont = document.getElementById("container" + (dataValue - 1));
-        if (prevCont) {
-            //console.log("It has previous container");
-            element.addEventListener('click', function (e) {
-                e.preventDefault();
-                prevCont.scrollIntoView({ behavior: "smooth" });
-            });
-        } else {
-            element.classList.add("invisible");
-        }
-    });
-
     const data = [
         { id: 1, slides: [{ index: 1 }, { index: 2 }, { index: 3 }, { index: 4 }, { index: 5 }] },
         { id: 2, slides: [{ index: 6 }, { index: 7 }, { index: 8 }, { index: 9 }, { index: 10 }] },
         { id: 3, slides: [{ index: 11 }, { index: 12 }, { index: 13 }, { index: 14 }, { index: 15 }] },
-        { id: 4, slides: [{ index: 16 }, { index: 17 }, { index: 18 }, { index: 19 }] }
+        { id: 4, slides: [{ index: 16 }, { index: 17 }, { index: 18 }, { index: 19 }, { index: 20 }] }
     ];
 
     data.forEach(containerData => {
         const containerId = `container${containerData.id}`;
         const swiperSelector = `#${containerId} .swiper-container`;
-        console.log(containerData.slides);
 
         // Initialize a new Swiper instance for each container
         const timelineSwiper = new Swiper(swiperSelector, {
@@ -106,13 +71,206 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
+
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const coll = collection(db, "/moments");
     const reading = await getDocs(coll);
-    reading.forEach((doc) => {
-        console.log(doc.data());
+    const dataArray = reading.docs.map(doc => doc.data());
+    let elements = [];
+    for (let i = 0; i < dataArray.length; i += 5) {
+        elements.push(dataArray.slice(i, i + 5));
+    }
+
+    const dbData = [];
+    let dbDocs = reading.size;
+    let newConts = Math.ceil(dbDocs / 5);
+    let initial_containerid = 5;
+    let initial_index = 21;
+    let last_indexes = dbDocs % 5;
+    let containerSection = document.getElementById("slides_section");
+
+    for (let j = 0; j < newConts; j++) {
+        let slides = [];
+        let date = elements[j][0].title;
+        let titulo = elements[j][0].title;
+        let descripcion = elements[j][0].description;
+        let url = elements[j][0].imgUrl;
+        let contDiv = document.createElement("div");
+        contDiv.classList.add("container", "h-screen", "relative");
+        contDiv.id = `container${initial_containerid}`;
+        let slides_container_html = `
+                <div class="timeline">
+                    <a class="absolute bottom-0 right-0 p-1 m-1 scroll-down"
+                        style="z-index:999"
+                        data-value="${initial_containerid}">
+                        <button type="button" style="background-color: white;"
+                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:pointer-events-none w-8 max-w-[40px] h-8 max-h-[40px] text-xs text-blue-gray-900 shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:shadow-none rounded-full">
+                            <span
+                                class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2"><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="1em" viewBox="0 0 384 512"><path
+                                        d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg></span>
+                        </button>
+                    </a>
+                    <a class="absolute bottom-0 left-0 p-1 m-1 scroll-up"
+                        style="z-index:999"
+                        data-value="${initial_containerid}">
+                        <button type="button" style="background-color: white;"
+                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:pointer-events-none w-8 max-w-[40px] h-8 max-h-[40px] text-xs text-blue-gray-900 shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:shadow-none rounded-full">
+                            <span
+                                class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2"><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="1em" viewBox="0 0 384 512"><path
+                                        d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" /></svg></span>
+                        </button>
+                    </a>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper" id="swiper_container${initial_containerid}">
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+        `;
+        contDiv.innerHTML = slides_container_html;
+        containerSection.appendChild(contDiv);
+        let swiper_container_div = document.getElementById(`swiper_container${initial_containerid}`);
+
+        let swiperHtml = ``;
+        if (j == newConts - 1) {
+            for (let x = 0; x < last_indexes; x++) {
+                date = elements[j][x].title;
+                titulo = elements[j][x].title;
+                descripcion = elements[j][x].description;
+                url = elements[j][x].imgUrl;
+                let slideDiv = document.createElement("div");
+                slideDiv.classList.add("swiper-slide");
+                slideDiv.style.backgroundImage = 'url(assets/img/back2.jpg)';
+                swiperHtml = `                
+    
+                <div class="swiper-slide-content">
+                    <span
+                        class="timeline-year">${date}</span>
+                    <div
+                        class="h-60 carousel carousel-vertical rounded-box"
+                        id="carousel0">
+                        <div class="carousel-item h-full flex justify-center ">
+                    <img src="${url}">
+                    </div>
+    
+                    </div>
+                    <h4 class="timeline-title">${titulo}</h4>
+                    <p class="timeline-text">${descripcion}
+                    </p>
+                </div>
+                `;
+                slideDiv.innerHTML = swiperHtml;
+                swiper_container_div.appendChild(slideDiv);
+                var ind = { index: initial_index };
+                slides.push(ind);
+                initial_index++;
+            }
+        } else {
+            for (let x = 0; x < 5; x++) {
+                date = elements[j][x].title;
+                titulo = elements[j][x].title;
+                descripcion = elements[j][x].description;
+                url = elements[j][x].imgUrl;
+                let slideDiv = document.createElement("div");
+                slideDiv.classList.add("swiper-slide");
+                slideDiv.style.backgroundImage = 'url(assets/img/back2.jpg)';
+                swiperHtml = `                
+    
+                <div class="swiper-slide-content">
+                    <span
+                        class="timeline-year">${date}</span>
+                    <div
+                        class="h-60 carousel carousel-vertical rounded-box"
+                        id="carousel0">
+                        <div class="carousel-item h-full flex justify-center ">
+                    <img src="${url}">
+                    </div>
+    
+                    </div>
+                    <h4 class="timeline-title">${titulo}</h4>
+                    <p class="timeline-text">${descripcion}
+                    </p>
+                </div>
+                `;
+                slideDiv.innerHTML = swiperHtml;
+                swiper_container_div.appendChild(slideDiv);
+                var ind = { index: initial_index };
+                slides.push(ind);
+                initial_index++;
+            }
+        }
+
+        var obj = { id: initial_containerid, slides: slides };
+        dbData.push(obj);
+        initial_containerid++;
+    }
+
+
+    dbData.forEach(containerData => {
+        const containerId = `container${containerData.id}`;
+        const swiperSelector = `#${containerId} .swiper-container`;
+
+        // Initialize a new Swiper instance for each container
+        const timelineSwiper = new Swiper(swiperSelector, {
+            direction: 'vertical',
+            loop: false,
+            speed: 1600,
+            pagination: '.swiper-pagination',
+            paginationBulletRender: function (swiper, index, className) {
+                const number = containerData.slides[index].index;
+                return `<span class="${className}">${number}</span>`;
+            },
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            breakpoints: {
+                768: {
+                    direction: 'horizontal',
+                }
+            }
+        });
+    });
+
+    let scrollDownElements = document.querySelectorAll('.scroll-down');
+    scrollDownElements.forEach(function (element) {
+        element.classList.add("opacity-60");
+        let dataValue = element.getAttribute('data-value');
+        console.log('Down - Data Value:', dataValue);
+        let nextCont = document.getElementById("container" + (parseInt(dataValue) + 1));
+        if (nextCont) {
+            console.log("It has next container");
+            element.addEventListener('click', function (e) {
+                e.preventDefault();
+                nextCont.scrollIntoView({ behavior: "smooth" });
+            });
+        } else {
+            element.classList.add("invisible");
+        }
+    });
+
+    let scrollUpElements = document.querySelectorAll('.scroll-up');
+    scrollUpElements.forEach(function (element) {
+        element.classList.add("opacity-60");
+        let dataValue = element.getAttribute('data-value');
+        console.log('Up - Data Value:', dataValue);
+        let prevCont = document.getElementById("container" + (dataValue - 1));
+        if (prevCont) {
+            console.log("It has previous container");
+            element.addEventListener('click', function (e) {
+                e.preventDefault();
+                prevCont.scrollIntoView({ behavior: "smooth" });
+            });
+        } else {
+            element.classList.add("invisible");
+        }
     });
 
 });
