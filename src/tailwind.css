@@ -3681,10 +3681,6 @@ details.collapse summary::-webkit-details-marker{
   text-decoration-line: underline;
 }
 
-.opacity-100{
-  opacity: 1;
-}
-
 .opacity-60{
   opacity: 0.6;
 }
