@@ -1,10 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, doc, getDocs } from 'firebase/firestore';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCyyRztCmDuib7FbpfYhsk7KJsIlpySJck",
     authDomain: "timelinebel.firebaseapp.com",
@@ -17,41 +14,12 @@ const firebaseConfig = {
 
 document.addEventListener("DOMContentLoaded", async function () {
 
-    const data = [
-        { id: 1, slides: [{ index: 1 }, { index: 2 }, { index: 3 }, { index: 4 }, { index: 5 }] },
-        { id: 2, slides: [{ index: 6 }, { index: 7 }, { index: 8 }, { index: 9 }, { index: 10 }] },
-        { id: 3, slides: [{ index: 11 }, { index: 12 }, { index: 13 }, { index: 14 }, { index: 15 }] },
-        { id: 4, slides: [{ index: 16 }, { index: 17 }, { index: 18 }, { index: 19 }] }
-        // Add more container data as needed
-    ];
-
-    data.forEach(containerData => {
-        const containerId = `container${containerData.id}`;
-        const swiperSelector = `#${containerId} .swiper-container`;
-        console.log(containerData.slides);
-
-        // Initialize a new Swiper instance for each container
-        const timelineSwiper = new Swiper(swiperSelector, {
-            direction: 'vertical',
-            loop: false,
-            speed: 1600,
-            pagination: '.swiper-pagination',
-            paginationBulletRender: function (swiper, index, className) {
-                const number = containerData.slides[index].index;
-                return `<span class="${className}">${number}</span>`;
-            },
-            paginationClickable: true,
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            breakpoints: {
-                768: {
-                    direction: 'horizontal',
-                }
-            }
-        });
-    });
-
-
+    let backgroundinitial = document.getElementById("heroInitial");
+    const min = 1;
+    const max = 8;
+    const random_number = Math.floor(Math.random() * (max - min + 1)) + min;
+    backgroundinitial.style.backgroundImage = `url(assets/img/hero${random_number}.jpg)`;
+    backgroundinitial.style.backgroundPosition = "center";
 
     let scrollDownElements = document.querySelectorAll('.scroll-down');
     scrollDownElements.forEach(function (element) {
@@ -87,15 +55,38 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     });
 
+    const data = [
+        { id: 1, slides: [{ index: 1 }, { index: 2 }, { index: 3 }, { index: 4 }, { index: 5 }] },
+        { id: 2, slides: [{ index: 6 }, { index: 7 }, { index: 8 }, { index: 9 }, { index: 10 }] },
+        { id: 3, slides: [{ index: 11 }, { index: 12 }, { index: 13 }, { index: 14 }, { index: 15 }] },
+        { id: 4, slides: [{ index: 16 }, { index: 17 }, { index: 18 }, { index: 19 }] }
+    ];
 
+    data.forEach(containerData => {
+        const containerId = `container${containerData.id}`;
+        const swiperSelector = `#${containerId} .swiper-container`;
+        console.log(containerData.slides);
 
-    let backgroundinitial = document.getElementById("heroInitial");
-    const min = 1;
-    const max = 8;
-    const random_number = Math.floor(Math.random() * (max - min + 1)) + min;
-    backgroundinitial.style.backgroundImage = `url(assets/img/hero${random_number}.jpg)`;
-    backgroundinitial.style.backgroundPosition = "center";
-
+        // Initialize a new Swiper instance for each container
+        const timelineSwiper = new Swiper(swiperSelector, {
+            direction: 'vertical',
+            loop: false,
+            speed: 1600,
+            pagination: '.swiper-pagination',
+            paginationBulletRender: function (swiper, index, className) {
+                const number = containerData.slides[index].index;
+                return `<span class="${className}">${number}</span>`;
+            },
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            breakpoints: {
+                768: {
+                    direction: 'horizontal',
+                }
+            }
+        });
+    });
 
     let carouselItemHtml1 = `<div
     class="carousel-item h-full flex justify-center ">
@@ -123,7 +114,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     reading.forEach((doc) => {
         console.log(doc.data());
     });
-
 
 });
 

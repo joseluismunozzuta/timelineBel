@@ -5,7 +5,7 @@ module.exports = {
     entry: './src/index.js',
     // The location of the build folder described above
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'src'),
         filename: 'bundle.js'
     }, experiments: {
         topLevelAwait: true,
