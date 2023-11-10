@@ -5,7 +5,7 @@ def convert_file_url_to_path(file_url, root_dir):
     #file_url = file_url[7:]
     # Remove root directory and replace backslashes with slashes
     rel_path = file_url.replace("\\", "/")
-    image_url = f'/assets/{rel_path}'
+    image_url = f'assets/{rel_path}'
     return image_url
 
 def find_image_paths(root_dir):
