@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, query, orderBy } from 'firebase/firestore';
 
@@ -23,7 +22,7 @@ const dbData = [];
 let elements = [];
 
 function setBackgroundInitial() {
-    let backgroundinitial = document.getElementById("heroInitial");
+    let backgroundinitial = document.getElementById("container0");
     const min = 1;
     const max = 8;
     const random_number = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -237,7 +236,6 @@ function buildSecondPagination() {
         const containerId = `container${containerData.id}`;
         const swiperSelector = `#${containerId} .swiper-container`;
 
-        // Initialize a new Swiper instance for each container
         const timelineSwiper = new Swiper(swiperSelector, {
             direction: 'vertical',
             loop: false,
@@ -260,6 +258,11 @@ function buildSecondPagination() {
 }
 
 function scrollButtonsLogic() {
+
+    document.getElementById("scrollToContainer1").addEventListener('click', function () {
+        document.getElementById("container1").scrollIntoView({ behavior: "smooth" });
+    })
+
     let scrollDownElements = document.querySelectorAll('.scroll-down');
     scrollDownElements.forEach(function (element) {
         element.classList.add("opacity-60");
@@ -303,7 +306,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     setAllCarouselItems();
 
-    /*const collectionDocs = await getFirebaseDocs();
+    const collectionDocs = await getFirebaseDocs();
 
     //Convert to array
     const dataArray = collectionDocs.docs.map(doc => doc.data());
@@ -315,7 +318,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     addContainersAndSlides(dbDocs);
 
-    buildSecondPagination();*/
+    buildSecondPagination();
 
     scrollButtonsLogic();
 
@@ -345,32 +348,32 @@ const imagesUrls = [
     "assets/img/1/d4f83e5.jpg",
     "assets/img/1/f280fda4.jpg",
     "assets/img/1/_b1fa566b.jpg",
-    "assets/img/10/20231006_174826.jpg",
-    "assets/img/10/20231006_174828.jpg",
+    "assets/img/10/020231006_174828.jpg",
     "assets/img/10/20231006_174843.jpg",
+    "assets/img/10/920231006_174826.jpg",
+    "assets/img/11/0120231006_192449.jpg",
+    "assets/img/11/020231006_192445.jpg",
     "assets/img/11/20231006_191238.jpg",
     "assets/img/11/20231006_191242.jpg",
     "assets/img/11/20231006_192110.jpg",
     "assets/img/11/20231006_192345.jpg",
     "assets/img/11/20231006_192355.jpg",
-    "assets/img/11/20231006_192419.jpg",
-    "assets/img/11/20231006_192445.jpg",
-    "assets/img/11/20231006_192449.jpg",
     "assets/img/11/20231006_192458.jpg",
     "assets/img/11/20231006_192606.jpg",
     "assets/img/11/20231006_192620.jpg",
     "assets/img/11/20231006_192628.jpg",
     "assets/img/11/20231006_192749.jpg",
     "assets/img/11/20231006_195847.jpg",
+    "assets/img/12/020231023_200517.jpg",
     "assets/img/12/20231023_200242.jpg",
     "assets/img/12/20231023_200512.jpg",
-    "assets/img/12/20231023_200517.jpg",
     "assets/img/12/20231023_200933.jpg",
     "assets/img/12/20231023_224406.jpg",
     "assets/img/12/20231023_224835.jpg",
     "assets/img/12/20231023_224849.jpg",
     "assets/img/12/20231023_224934.jpg",
     "assets/img/12/20231023_224938.jpg",
+    "assets/img/13/020231026_193244.jpg",
     "assets/img/13/20231026_190343.jpg",
     "assets/img/13/20231026_193104.jpg",
     "assets/img/13/20231026_193110.jpg",
@@ -382,7 +385,6 @@ const imagesUrls = [
     "assets/img/13/20231026_193152.jpg",
     "assets/img/13/20231026_193155.jpg",
     "assets/img/13/20231026_193157.jpg",
-    "assets/img/13/20231026_193244.jpg",
     "assets/img/14/020231029_180044.jpg",
     "assets/img/14/20231029_175912.jpg",
     "assets/img/14/20231029_175914.jpg",
@@ -411,25 +413,24 @@ const imagesUrls = [
     "assets/img/15/20231029_205430_06.jpg",
     "assets/img/16/20231029_212022.jpg",
     "assets/img/16/20231029_212026.jpg",
-    "assets/img/17/20231101_003914.jpg",
-    "assets/img/17/20231101_003920.jpg",
+    "assets/img/17/020231101_004332.jpg",
     "assets/img/17/20231101_003942.jpg",
     "assets/img/17/20231101_004312.jpg",
-    "assets/img/17/20231101_004332.jpg",
     "assets/img/17/20231101_004406.jpg",
     "assets/img/17/20231101_040430.jpg",
     "assets/img/17/20231101_041603.jpg",
     "assets/img/17/20231101_041616.jpg",
     "assets/img/17/20231101_041639.jpg",
     "assets/img/17/20231101_041717.jpg",
+    "assets/img/18/020231101_004201.jpg",
     "assets/img/18/20231101_004023.jpg",
     "assets/img/18/20231101_004052.jpg",
     "assets/img/18/20231101_004057.jpg",
-    "assets/img/18/20231101_004201.jpg",
     "assets/img/18/20231101_004233.jpg",
     "assets/img/18/20231101_004439.jpg",
     "assets/img/18/20231101_004506.jpg",
     "assets/img/18/20231101_004536.jpg",
+    "assets/img/19/020231109_214433.jpg",
     "assets/img/19/20231109_180154.jpg",
     "assets/img/19/20231109_192751.jpg",
     "assets/img/19/20231109_193226.jpg",
@@ -445,8 +446,8 @@ const imagesUrls = [
     "assets/img/19/20231109_214029.jpg",
     "assets/img/19/20231109_214106.jpg",
     "assets/img/19/20231109_214429.jpg",
-    "assets/img/19/20231109_214433.jpg",
     "assets/img/19/20231109_231014.jpg",
+    "assets/img/2/120230820_180622.jpg",
     "assets/img/2/20230820_180449.jpg",
     "assets/img/2/20230820_180515.jpg",
     "assets/img/2/20230820_180517.jpg",
@@ -455,8 +456,6 @@ const imagesUrls = [
     "assets/img/2/20230820_180559.jpg",
     "assets/img/2/20230820_180602.jpg",
     "assets/img/2/20230820_180617.jpg",
-    "assets/img/2/20230820_180619.jpg",
-    "assets/img/2/20230820_180622.jpg",
     "assets/img/2/20230820_180629.jpg",
     "assets/img/2/20230820_180634.jpg",
     "assets/img/2/20230820_180635.jpg",
