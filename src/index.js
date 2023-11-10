@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, query, orderBy } from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCyyRztCmDuib7FbpfYhsk7KJsIlpySJck",
@@ -11,23 +11,27 @@ const firebaseConfig = {
     appId: "1:998005125683:web:6b73f4f265724f48b86946"
 };
 
+const data = [
+    { id: 1, slides: [{ index: 1 }, { index: 2 }, { index: 3 }, { index: 4 }, { index: 5 }] },
+    { id: 2, slides: [{ index: 6 }, { index: 7 }, { index: 8 }, { index: 9 }, { index: 10 }] },
+    { id: 3, slides: [{ index: 11 }, { index: 12 }, { index: 13 }, { index: 14 }, { index: 15 }] },
+    { id: 4, slides: [{ index: 16 }, { index: 17 }, { index: 18 }, { index: 19 }, { index: 20 }] }
+];
 
-document.addEventListener("DOMContentLoaded", async function () {
+const dbData = [];
 
+let elements = [];
+
+function setBackgroundInitial() {
     let backgroundinitial = document.getElementById("heroInitial");
     const min = 1;
     const max = 8;
     const random_number = Math.floor(Math.random() * (max - min + 1)) + min;
     backgroundinitial.style.backgroundImage = `url(assets/img/hero${random_number}.jpg)`;
     backgroundinitial.style.backgroundPosition = "center";
+}
 
-    const data = [
-        { id: 1, slides: [{ index: 1 }, { index: 2 }, { index: 3 }, { index: 4 }, { index: 5 }] },
-        { id: 2, slides: [{ index: 6 }, { index: 7 }, { index: 8 }, { index: 9 }, { index: 10 }] },
-        { id: 3, slides: [{ index: 11 }, { index: 12 }, { index: 13 }, { index: 14 }, { index: 15 }] },
-        { id: 4, slides: [{ index: 16 }, { index: 17 }, { index: 18 }, { index: 19 }, { index: 20 }] }
-    ];
-
+function buildFirstPagination() {
     data.forEach(containerData => {
         const containerId = `container${containerData.id}`;
         const swiperSelector = `#${containerId} .swiper-container`;
@@ -52,7 +56,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         });
     });
+}
 
+function setAllCarouselItems() {
     let carouselItemHtml1 = `<div
     class="carousel-item h-full flex justify-center ">
     <img
@@ -62,7 +68,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const finalArray = [];
 
-    for (let i = 0; i < 19; i++) {
+    for (let i = 0; i < 20; i++) {
         let carousel = document.getElementById("carousel" + i);
         const subArray = imagesUrls.filter(url => url.includes(`/img/${i}/`));
         finalArray.push(subArray);
@@ -70,33 +76,30 @@ document.addEventListener("DOMContentLoaded", async function () {
             carousel.innerHTML += carouselItemHtml1 + subArray[j] + carouselItemHtml2;
         }
     }
+}
 
-
-    // Initialize Firebase
+const getFirebaseDocs = async () => {
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const coll = collection(db, "/moments");
-    const reading = await getDocs(coll);
-    const dataArray = reading.docs.map(doc => doc.data());
-    let elements = [];
-    for (let i = 0; i < dataArray.length; i += 5) {
-        elements.push(dataArray.slice(i, i + 5));
-    }
+    const reading = await getDocs(query(coll, orderBy("timestamp", "asc")));
+    return reading;
+}
 
-    const dbData = [];
-    let dbDocs = reading.size;
+function addContainersAndSlides(dbDocs) {
     let newConts = Math.ceil(dbDocs / 5);
     let initial_containerid = 5;
     let initial_index = 21;
     let last_indexes = dbDocs % 5;
+
     let containerSection = document.getElementById("slides_section");
 
     for (let j = 0; j < newConts; j++) {
         let slides = [];
-        let date = elements[j][0].title;
-        let titulo = elements[j][0].title;
-        let descripcion = elements[j][0].description;
-        let url = elements[j][0].imgUrl;
+        let timestamp;
+        let titulo;
+        let descripcion;
+        let url;
         let contDiv = document.createElement("div");
         contDiv.classList.add("container", "h-screen", "relative");
         contDiv.id = `container${initial_containerid}`;
@@ -142,7 +145,15 @@ document.addEventListener("DOMContentLoaded", async function () {
         let swiperHtml = ``;
         if (j == newConts - 1) {
             for (let x = 0; x < last_indexes; x++) {
-                date = elements[j][x].title;
+                timestamp = elements[j][x].timestamp;
+                let date = new Date(timestamp.toMillis());
+
+                let formattedDateWithoutYear = date.toLocaleDateString('es-ES', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                }).replace(/ de \d{4}$/, '');
+
                 titulo = elements[j][x].title;
                 descripcion = elements[j][x].description;
                 url = elements[j][x].imgUrl;
@@ -153,7 +164,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     
                 <div class="swiper-slide-content">
                     <span
-                        class="timeline-year">${date}</span>
+                        class="timeline-year">${formattedDateWithoutYear}</span>
                     <div
                         class="h-60 carousel carousel-vertical rounded-box"
                         id="carousel0">
@@ -175,7 +186,14 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         } else {
             for (let x = 0; x < 5; x++) {
-                date = elements[j][x].title;
+                timestamp = elements[j][x].timestamp;
+                let date = new Date(timestamp.toMillis());
+
+                let formattedDateWithoutYear = date.toLocaleDateString('es-ES', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                }).replace(/ de \d{4}$/, '');
                 titulo = elements[j][x].title;
                 descripcion = elements[j][x].description;
                 url = elements[j][x].imgUrl;
@@ -186,7 +204,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     
                 <div class="swiper-slide-content">
                     <span
-                        class="timeline-year">${date}</span>
+                        class="timeline-year">${formattedDateWithoutYear}</span>
                     <div
                         class="h-60 carousel carousel-vertical rounded-box"
                         id="carousel0">
@@ -212,8 +230,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         dbData.push(obj);
         initial_containerid++;
     }
+}
 
-
+function buildSecondPagination() {
     dbData.forEach(containerData => {
         const containerId = `container${containerData.id}`;
         const swiperSelector = `#${containerId} .swiper-container`;
@@ -238,15 +257,17 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         });
     });
+}
 
+function scrollButtonsLogic() {
     let scrollDownElements = document.querySelectorAll('.scroll-down');
     scrollDownElements.forEach(function (element) {
         element.classList.add("opacity-60");
         let dataValue = element.getAttribute('data-value');
-        console.log('Down - Data Value:', dataValue);
+        //console.log('Down - Data Value:', dataValue);
         let nextCont = document.getElementById("container" + (parseInt(dataValue) + 1));
         if (nextCont) {
-            console.log("It has next container");
+            //console.log("It has next container");
             element.addEventListener('click', function (e) {
                 e.preventDefault();
                 nextCont.scrollIntoView({ behavior: "smooth" });
@@ -260,10 +281,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     scrollUpElements.forEach(function (element) {
         element.classList.add("opacity-60");
         let dataValue = element.getAttribute('data-value');
-        console.log('Up - Data Value:', dataValue);
+        //console.log('Up - Data Value:', dataValue);
         let prevCont = document.getElementById("container" + (dataValue - 1));
         if (prevCont) {
-            console.log("It has previous container");
+            //console.log("It has previous container");
             element.addEventListener('click', function (e) {
                 e.preventDefault();
                 prevCont.scrollIntoView({ behavior: "smooth" });
@@ -272,6 +293,31 @@ document.addEventListener("DOMContentLoaded", async function () {
             element.classList.add("invisible");
         }
     });
+}
+
+document.addEventListener("DOMContentLoaded", async function () {
+
+    setBackgroundInitial();
+
+    buildFirstPagination();
+
+    setAllCarouselItems();
+
+    /*const collectionDocs = await getFirebaseDocs();
+
+    //Convert to array
+    const dataArray = collectionDocs.docs.map(doc => doc.data());
+    for (let i = 0; i < dataArray.length; i += 5) {
+        elements.push(dataArray.slice(i, i + 5));
+    }
+
+    let dbDocs = collectionDocs.size;
+
+    addContainersAndSlides(dbDocs);
+
+    buildSecondPagination();*/
+
+    scrollButtonsLogic();
 
 });
 
@@ -337,15 +383,15 @@ const imagesUrls = [
     "assets/img/13/20231026_193155.jpg",
     "assets/img/13/20231026_193157.jpg",
     "assets/img/13/20231026_193244.jpg",
+    "assets/img/14/020231029_180044.jpg",
     "assets/img/14/20231029_175912.jpg",
     "assets/img/14/20231029_175914.jpg",
     "assets/img/14/20231029_175928.jpg",
     "assets/img/14/20231029_175935.jpg",
     "assets/img/14/20231029_175959.jpg",
     "assets/img/14/20231029_180004.jpg",
-    "assets/img/14/20231029_180044.jpg",
     "assets/img/14/20231029_180125.jpg",
-    "assets/img/15/20231029_193420.jpg",
+    "assets/img/14/7130440.jpg",
     "assets/img/15/20231029_193442.jpg",
     "assets/img/15/20231029_193535_05.jpg",
     "assets/img/15/20231029_193838_07.jpg",
@@ -384,6 +430,23 @@ const imagesUrls = [
     "assets/img/18/20231101_004439.jpg",
     "assets/img/18/20231101_004506.jpg",
     "assets/img/18/20231101_004536.jpg",
+    "assets/img/19/20231109_180154.jpg",
+    "assets/img/19/20231109_192751.jpg",
+    "assets/img/19/20231109_193226.jpg",
+    "assets/img/19/20231109_193244.jpg",
+    "assets/img/19/20231109_193343.jpg",
+    "assets/img/19/20231109_193349.jpg",
+    "assets/img/19/20231109_202608.jpg",
+    "assets/img/19/20231109_212417.jpg",
+    "assets/img/19/20231109_213329.jpg",
+    "assets/img/19/20231109_213648.jpg",
+    "assets/img/19/20231109_213825.jpg",
+    "assets/img/19/20231109_213931.jpg",
+    "assets/img/19/20231109_214029.jpg",
+    "assets/img/19/20231109_214106.jpg",
+    "assets/img/19/20231109_214429.jpg",
+    "assets/img/19/20231109_214433.jpg",
+    "assets/img/19/20231109_231014.jpg",
     "assets/img/2/20230820_180449.jpg",
     "assets/img/2/20230820_180515.jpg",
     "assets/img/2/20230820_180517.jpg",
