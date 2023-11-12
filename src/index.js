@@ -28,6 +28,17 @@ function setBackgroundInitial() {
     const random_number = Math.floor(Math.random() * (max - min + 1)) + min;
     backgroundinitial.style.backgroundImage = `url(assets/img/hero${random_number}.jpg)`;
     backgroundinitial.style.backgroundPosition = "center";
+
+
+    for (var g = 1; g <= 20; g++) {
+        let swiper = document.getElementById(`swiper-slide${g}`);
+        const min = 1;
+        const max = 5;
+        const random_number = Math.floor(Math.random() * (max - min + 1)) + min;
+        swiper.style.backgroundImage = `url(assets/img/back${random_number}.jpg)`;
+        swiper.style.backgroundPosition = "center";
+    }
+
 }
 
 function buildFirstPagination() {
@@ -158,7 +169,10 @@ function addContainersAndSlides(dbDocs) {
                 url = elements[j][x].imgUrl;
                 let slideDiv = document.createElement("div");
                 slideDiv.classList.add("swiper-slide");
-                slideDiv.style.backgroundImage = 'url(assets/img/back2.jpg)';
+                let min = 1;
+                let max = 5;
+                let random_number = Math.floor(Math.random() * (max - min + 1)) + min;
+                slideDiv.style.backgroundImage = `url(assets/img/back${random_number}.jpg)`;
                 swiperHtml = `                
     
                 <div class="swiper-slide-content">
