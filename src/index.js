@@ -98,6 +98,7 @@ const getFirebaseDocs = async () => {
 
 function addContainersAndSlides(dbDocs) {
     let newConts = Math.ceil(dbDocs / 5);
+    console.log(newConts);
     let initial_containerid = 5;
     let initial_index = 21;
     let last_indexes = dbDocs % 5;
@@ -153,7 +154,7 @@ function addContainersAndSlides(dbDocs) {
         let swiper_container_div = document.getElementById(`swiper_container${initial_containerid}`);
 
         let swiperHtml = ``;
-        if (j == newConts - 1) {
+        if (j == newConts - 1 && last_indexes !== 0) {
             for (let x = 0; x < last_indexes; x++) {
                 timestamp = elements[j][x].timestamp;
                 let date = new Date(timestamp.toMillis());
@@ -329,6 +330,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     let dbDocs = collectionDocs.size;
+
+    console.log(dbDocs);
 
     addContainersAndSlides(dbDocs);
 
