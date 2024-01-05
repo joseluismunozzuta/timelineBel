@@ -3810,14 +3810,13 @@ body {
   position: absolute;
   text-align: center;
   width: 95%;
-  height: 90%;
+  max-height: 93%;
   max-width: 310px;
   right: 50%;
-  top: 3%;
+  top: 2%;
   transform: translate(50%, 0);
   font-size: 12px;
   z-index: 2;
-  overflow: hidden;
 }
 
 .timeline .swiper-slide .timeline-year {
@@ -3841,17 +3840,6 @@ body {
   transition: 0.2s ease 0.5s;
 }
 
-.timeline .swiper-slide .timeline-text {
-  font-size: 14px;
-  line-height: 1.5;
-  opacity: 0;
-  transform: translate3d(20px, 0, 0);
-  transition: 0.2s ease 0.6s;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  margin: 0;
-}
-
 .timeline .swiper-slide-active .timeline-year {
   opacity: 1;
   transform: translate3d(0, 0, 0);
@@ -3865,15 +3853,23 @@ body {
   transition: 0.4s ease 1.7s;
 }
 
+.timeline .swiper-slide .timeline-text {
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translate3d(20px, 0, 0);
+  transition: 0.2s ease 0.6s;
+  margin: 0;
+}
+
 .timeline .swiper-slide-active .timeline-text {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: 0.4s ease 1.8s;
-  overflow: scroll;
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
   margin: 0;
-  z-index: 3;
+  overflow: scroll;
+  height: 270px;
+  padding-bottom: 5px;
 }
 
 .timeline .swiper-pagination {

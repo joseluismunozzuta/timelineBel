@@ -188,8 +188,8 @@ function addContainersAndSlides(dbDocs) {
     
                     </div>
                     <h4 class="timeline-title">${titulo}</h4>
-                    <p class="timeline-text">${descripcion}
-                    </p>
+                    <div class="timeline-text">${descripcion}
+                    </div>
                 </div>
                 `;
                 slideDiv.innerHTML = swiperHtml;
@@ -231,8 +231,8 @@ function addContainersAndSlides(dbDocs) {
     
                     </div>
                     <h4 class="timeline-title">${titulo}</h4>
-                    <p class="timeline-text">${descripcion}
-                    </p>
+                    <div class="timeline-text">${descripcion}
+                    </div>
                 </div>
                 `;
                 slideDiv.innerHTML = swiperHtml;
