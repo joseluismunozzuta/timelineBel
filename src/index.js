@@ -70,6 +70,7 @@ function buildFirstPagination() {
 }
 
 function setAllCarouselItems() {
+
     let carouselItemHtml1 = `<div
     class="carousel-item h-full flex justify-center ">
     <img
@@ -87,6 +88,7 @@ function setAllCarouselItems() {
             carousel.innerHTML += carouselItemHtml1 + subArray[j] + carouselItemHtml2;
         }
     }
+
 }
 
 const getFirebaseDocs = async () => {
@@ -338,7 +340,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     let dbDocs = collectionDocs.size;
 
-    console.log(dbDocs);
+    //console.log(dbDocs);
 
     addContainersAndSlides(dbDocs);
 
